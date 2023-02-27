@@ -3,11 +3,25 @@ const quoteText = document.getElementById('quote-text');
 const quoteAuthor = document.getElementById('quote-author');
 const twitterBtn = document.getElementById('twitter-btn');
 const nextQuoteBtn = document.getElementById('new-quote-btn');
+const loader = document.getElementById('loader');
 
 let apiQuotes = [];
 
+// Show Loading
+function loading() {
+  loader.hidden = false;
+  quoteContainer.hidden = true;
+}
+
+// Hide loading
+function complete() {
+  loader.hidden = true;
+  quoteContainer.hidden = false;
+}
+
 // Show new Quote
 function newQuote() {
+  loading();
   // Pick a random qoute from apiQuotes array
   // Creeren van een random nummer van 0 tot het maximaal aantal items in de array van apiQuotes.
   // Math.floor zorgt ervoor dat er een nummer van 1 heel decimaal wordt gecreeert door het nummer naar boven af te ronden
@@ -25,7 +39,9 @@ function newQuote() {
   } else {
     quoteText.classList.remove('long-quote');
   }
+  // Set Quote, Hide Loader
   quoteText.textContent = quote.text;
+  complete();
 }
 
 
@@ -42,6 +58,7 @@ function newQuote() {
   // Get Quotes From API
   // With Async Fetch request within a try catch statment
   async function getQuotes() {
+    loading();
     const apiUrl = 'https://type.fit/api/quotes';
     try {
       //  fetch request
@@ -65,6 +82,5 @@ function newQuote() {
   }
 
   // Eventlisteners
-
   nextQuoteBtn.addEventListener('click', newQuote)
   twitterBtn.addEventListener('click', tweetQuote);
