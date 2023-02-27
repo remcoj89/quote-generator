@@ -6,11 +6,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background-color: #f7f7f7;
-  background-image: linear-gradient(
-    174.2deg,
-    rgba(255, 244, 228, 1) 7.1%,
-    rgba(240, 246, 238, 1) 67.4%
-  );
+  background-image: url("https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
   color: black;
   font-weight: 600;
   font-family: "Labrada", serif;
@@ -22,7 +20,7 @@ body {
 
 .quote-container {
   width: 50%;
-  background-color: rgba(249, 250, 251, 0.354);
+  background-color: rgba(249, 250, 251, 0.514);
   border-radius: 2rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   padding: 2rem;
@@ -36,7 +34,7 @@ body {
   font-size: 2rem;
 }
 
-.fa-quote-left .fa-quote-right{
+.fa-quote-left .fa-quote-right {
   font-size: 4rem;
 }
 
@@ -55,7 +53,12 @@ body {
 }
 
 .button-primary {
-  background-image: linear-gradient(to right, #16222A 0%, #3A6073  51%, #16222A  100%);
+  background-image: linear-gradient(
+    to right,
+    #16222a 0%,
+    #3a6073 51%,
+    #16222a 100%
+  );
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
@@ -75,13 +78,15 @@ body {
   text-decoration: none;
 }
 
-#twitter {
+#twitter-btn {
   font-size: 1.5rem;
+}
+
+#twitter-btn:hover {
+  color: blue;
 }
 /* Media Querry: Tablet or Smaller */
 @media screen and (max-width: 1000px) {
-
-
   .quote-container {
     margin: auto 5px;
   }
